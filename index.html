@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>𝓣𝓱𝓮 𝓑𝓲𝓵𝓵𝓲𝓸𝓷𝓪𝓲𝓻𝓮'𝓼 𝓒𝓵𝓾𝓫</title>
+  
+  <!-- ICON UNTUK BROWSER -->
+  <link rel="icon" type="images/png" sizes="32x32" href="aplikasi/favicon-32x32.png">
+  <link rel="icon" type="images/png" sizes="16x16" href="aplikasi/favicon-16x16.png">
+  
+  <!-- ICON UNTUK APPLE -->
+  <link rel="apple-touch-icon" sizes="180x180" href="aplikasi/apple-touch-icon.png">
+  
+  <!-- MANIFEST UNTUK PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Arisan CE">
+  
+  <!-- FONT-1 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/dark_mode.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-container">
+      <div class="foto-rgb">
+        <audio id="music" src="music/lagu.mp3" loop></audio>
+        <button id="playPauseBtn">
+          <img id="icon" src="images/play.png" alt="Play" width="25" />
+        </button>
+        <script>
+          const foto = document.getElementById('fotomuter')
+          const tombol = document.getElementById('playPauseBtn');
+          const musik = document.getElementById('music');
+          tombol.addEventListener('click', () => {
+          if (music.paused) 
+            { music.play();
+            fotomuter.style.animationPlayState = 'running';
+            icon.src = "images/pause.png";
+            icon.alt = "Pause";
+            } 
+          else {
+            music.pause();
+            fotomuter.style.animationPlayState = 'paused';
+            icon.src = "images/play.png";
+            icon.alt = "Play";
+            }
+            });
+        </script>
+        <div class="fotomuter" id="fotomuter">
+          <img class="fotoframe" src="images/logo.png">
+        </div>
+      </div>
+      <h1 class="fredericka-the-great-regular">
+        <span class="line">The Billionaire's</span>
+        <span class="divider"></span>
+        <span class="line">~ Club ~</span>
+      </h1>
+    </div>
+  </header>
+  <!-- ISI -->
+  <main>
+    <div class="frame-exel"> <!-- penuh 1 layar -->
+      <iframe 
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2MgQFcfl6CCFpMXBqIutnGkdnDItIWdRai4bVOCLiWSp-mWt8DaW5GDVwBLnSpfhaDSlFrwxqfDXL/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+        width="100%" 
+        height="100%"
+        class="exel">
+      </iframe>
+    </div>
+  </main>
+  <div class="switch" id="themeToggle">
+    <div class="knob">
+      <span class="icon-goyang sun">
+        <img src="images/light.png">
+      </span>
+      <span class="icon-goyang moon">
+        <img src="images/dark.png">
+      </span>
+    </div>
+  </div>
+  <div class="sheet-footer">
+    <div class="blur-box">
+      <div class="doa">꧁لَا إِلهَ إِلَّا اللَّهُ مُحَمَّدْ رَسُولُ اللَّهِ꧂</div>
+      <div class="datetime" id="datetime">Memuat waktu...</div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
+          
