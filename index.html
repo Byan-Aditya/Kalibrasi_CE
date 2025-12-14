@@ -31,39 +31,41 @@
 <body>
   <!-- HEADER -->
   <header id="header">
+    <header id="header">
     <div class="header-container">
       <div class="foto-rgb">
         <audio id="music" src="music/lagu.mp3" loop></audio>
         <button id="playPauseBtn">
-          <img id="icon" src="images/play.png" alt="Play" width="25" />
+          <img id="icon" src="images/play.png" alt="Play" width="25">
         </button>
-        <script>
-          const foto = document.getElementById('fotomuter')
-          const tombol = document.getElementById('playPauseBtn');
-          const musik = document.getElementById('music');
-          tombol.addEventListener('click', () => {
-          if (music.paused) 
-            { music.play();
-            fotomuter.style.animationPlayState = 'running';
-            icon.src = "images/pause.png";
-            icon.alt = "Pause";
-            } 
-          else {
-            music.pause();
-            fotomuter.style.animationPlayState = 'paused';
-            icon.src = "images/play.png";
-            icon.alt = "Play";
-            }
-            });
-        </script>
         <div class="fotomuter" id="fotomuter">
           <img class="fotoframe" src="images/logo.png">
         </div>
+        <script>
+          const fotomuter = document.getElementById('fotomuter');
+          const tombol = document.getElementById('playPauseBtn');
+          const musik = document.getElementById('music');
+          const icon = document.getElementById('icon');
+        
+          tombol.addEventListener('click', () => {
+            if (musik.paused) {
+              musik.play();
+              fotomuter.style.animationPlayState = 'running';
+              icon.src = "images/pause.png";
+              icon.alt = "Pause";
+            } else {
+              musik.pause();
+              fotomuter.style.animationPlayState = 'paused';
+              icon.src = "images/play.png";
+              icon.alt = "Play";
+            }
+          });
+        </script>
       </div>
       <h1 class="fredericka-the-great-regular">
-        <span class="line">REKAPAN KALIBRASI</span>
+        <span class="line">The Billionaire's</span>
         <span class="divider"></span>
-        <span class="line">~ CE ~</span>
+        <span class="line">~ Club ~</span>
       </h1>
     </div>
   </header>
