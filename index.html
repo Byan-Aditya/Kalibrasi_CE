@@ -78,15 +78,23 @@
       </iframe>
     </div>
   </main>
-  <div class="switch" id="themeToggle">
-    <div class="knob">
-      <span class="icon-goyang sun">
-        <img src="images/light.png">
-      </span>
-      <span class="icon-goyang moon">
-        <img src="images/dark.png">
-      </span>
+  <div class="scroll-wrap">
+    <button id="scrollBtn" class="scroll-btn" aria-label="Scroll">
+      <span id="icon">↓</span>
+    </button>
+    <div class="switch" id="themeToggle">
+      <div class="knob">
+        <span class="icon-goyang sun">
+          <img src="images/light.png">
+        </span>
+        <span class="icon-goyang moon">
+          <img src="images/dark.png">
+        </span>
+      </div>
     </div>
+    <button id="refreshBtn" class="refresh-btn" aria-label="Refresh">
+      <span class="icon">♻️</span>
+    </button>
   </div>
   <div class="sheet-footer">
     <div class="blur-box">
@@ -97,4 +105,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-          
