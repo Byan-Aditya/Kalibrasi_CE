@@ -87,6 +87,60 @@ updateDateTime();
   document.addEventListener("dragstart", e => e.preventDefault());
   document.addEventListener("drop", e => e.preventDefault());
 
+// === scroll buttom ===
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('scrollBtn');
+  const icon = document.getElementById('icon');
+
+  if (!btn) return; // pengaman kalau elemen belum ada
+
+  function updateButton() {
+    const scrollTop = window.scrollY;
+    const maxScroll =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    if (scrollTop >= maxScroll - 8) {
+      btn.classList.add('up');
+    } else {
+      btn.classList.remove('up');
+    }
+  }
+
+  btn.addEventListener('click', () => {
+    const maxScroll =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    // feedback klik
+    btn.style.transform = 'scale(.92)';
+    setTimeout(() => (btn.style.transform = ''), 120);
+
+    if (btn.classList.contains('up')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: maxScroll, behavior: 'smooth' });
+    }
+  });
+
+  window.addEventListener('scroll', updateButton);
+  window.addEventListener('load', updateButton);
+});
+
+// === refresh buttom ===
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('refreshBtn');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    btn.classList.add('loading');
+
+    setTimeout(() => {
+      const url = new URL(window.location.href);
+      url.searchParams.set('_refresh', Date.now());
+      window.location.replace(url.toString());
+    }, 400);
+  });
+});
+
 // === aplikasi===
 const CACHE_NAME = "Arisan-cache-auto";
 
@@ -135,3 +189,4 @@ self.addEventListener("fetch", event => {
     })
   );
 });
+  
