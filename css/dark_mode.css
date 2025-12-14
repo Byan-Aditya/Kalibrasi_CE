@@ -38,10 +38,6 @@
 
   /* ==== SLIDER ==== */
   .switch {
-    position: fixed;
-    bottom: 80px; /* jarak dari bawah layar */
-    left: 50%;    /* center horizontal */
-    transform: translateX(-50%);
     z-index: 1;
     width: 75px;
     height: 38px;
@@ -59,7 +55,7 @@
     box-shadow: 0 0 6px white;
   }
   :root[data-theme="dark"] .switch {
-    background: rgb(51, 51, 51, 0.7);
+    background: rgb(0, 0, 0, 0.7);
     box-shadow: 0 0 6px black;
     border: var(--border-button-dark);
   }
@@ -123,4 +119,5 @@
   /* Responsive Typography dan Layout */
   @media (max-width: 768px) {
 
-  }
+      }
+      
