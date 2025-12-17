@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>𝕶𝕬𝕷𝕴𝕭𝕽𝕬𝕾𝕴</title>
+  <title>𝕂𝔸𝕃𝕀𝔹ℝ𝔸𝕊𝕀</title>
   
   <!-- ICON UNTUK BROWSER -->
   <link rel="icon" type="images/png" sizes="32x32" href="aplikasi/favicon-32x32.png">
@@ -27,6 +27,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/dark_mode.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/view_pager.css">
 </head>
 <body>
   <!-- HEADER -->
@@ -62,31 +63,39 @@
         </script>
       </div>
       <h1 class="fredericka-the-great-regular">
-        <span class="line">REKAPAN KALIBRASI</span>
+        <span class="line">KALIBRASI</span>
         <span class="divider"></span>
         <span class="line">~ CE ~</span>
       </h1>
     </div>
+    <div class="tab-bar">
+     <button class="active"><span>Schedule</span></button>
+     <button><span>Replacement</span></button>
+    </div>  
   </header>
   <!-- ISI -->
-  <main>
-    <div class="frame-exel"> <!-- penuh 1 layar -->
-      <iframe 
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2MgQFcfl6CCFpMXBqIutnGkdnDItIWdRai4bVOCLiWSp-mWt8DaW5GDVwBLnSpfhaDSlFrwxqfDXL/pubhtml?gid=1349651978&amp;single=true&amp;widget=true&amp;headers=false"
-        width="100%" 
-        height="100%"
-        class="exel">
-      </iframe>
-    </div>
-    <div class="frame-exel"> <!-- penuh 2 layar -->
-      <iframe 
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2MgQFcfl6CCFpMXBqIutnGkdnDItIWdRai4bVOCLiWSp-mWt8DaW5GDVwBLnSpfhaDSlFrwxqfDXL/pubhtml?gid=810469274&amp;single=true&amp;widget=true&amp;headers=false"
-        width="100%" 
-        height="100%"
-        class="exel">
-      </iframe>
-    </div>
-  </main>
+  <div style="z-index: 1;" class="viewpager" id="pager">
+    <section class="page">
+      <div class="frame-exel"> <!-- penuh 1 layar -->
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2MgQFcfl6CCFpMXBqIutnGkdnDItIWdRai4bVOCLiWSp-mWt8DaW5GDVwBLnSpfhaDSlFrwxqfDXL/pubhtml?gid=1349651978&amp;single=true&amp;widget=true&amp;headers=false"
+          width="100%" 
+          height="100%"
+          class="exel">
+        </iframe>
+      </div>
+    </section>
+    <section class="page">
+      <div class="frame-exel"> <!-- penuh 2 layar -->
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2MgQFcfl6CCFpMXBqIutnGkdnDItIWdRai4bVOCLiWSp-mWt8DaW5GDVwBLnSpfhaDSlFrwxqfDXL/pubhtml?gid=810469274&amp;single=true&amp;widget=true&amp;headers=false"
+          width="100%" 
+          height="100%"
+          class="exel">
+        </iframe>
+      </div>
+    </section>
+  </div>
   <div class="button-wrap">
     <button id="scrollBtn" class="scroll-btn" aria-label="Scroll">
       <span id="icon">
