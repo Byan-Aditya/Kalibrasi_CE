@@ -1,7 +1,10 @@
     .tab-bar {
       margin-top: 0px; 
       justify-content: center;
-      padding: 10px 40px;
+      padding-top: 0px;
+      padding-bottom: 15px;
+      padding-left: 40px;
+      padding-right: 40px;
       align-items: center; 
       display: flex;
       border-radius: 50px;
@@ -72,21 +75,24 @@
       flex: 0 0 100%;
       height: 100vh;
       scroll-snap-align: start;
-      padding-top: 150px;
-      padding-bottom: 75px;
+      padding-top: 160px;
+      padding-bottom: 90px;
       overflow-y: auto;
     }
 
     @media (max-width: 768px) {
       .page {
         flex: 0 0 100%;
-        padding-top: 125px;
-        padding-bottom: 80px;
+        padding-top: 130px;
+        padding-bottom: 85px;
         overflow-y: auto;
       }
       
       .tab-bar {
-        padding: 5px 15px;
+        padding-top: 0px;
+        padding-bottom: 12.5px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
       
       .tab-bar button {
