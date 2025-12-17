@@ -4,6 +4,17 @@
       -webkit-user-select: none !important;
       -ms-user-select: none !important;
     }
+    
+    /* Chrome, Edge, Safari */
+    ::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    /* Firefox */
+    * {
+      scrollbar-width: none;
+    }
 
     body {
      background: var(--background-light);
@@ -28,7 +39,7 @@
       top: 0;
       left: 0;
       right: 0;
-      padding: 5px;
+      padding: 0px;
       backdrop-filter: blur(6px);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
       border-radius: 0 0 20px 20px;
@@ -49,8 +60,12 @@
     }
     
     .header-container h1 {
-      font-size: 20px;
+      font-size: 30px;
       line-height: 1.2;  /* jarak antar baris, bisa disetel */
+      margin-left: 10px;
+      margin-right: 0px;
+      margin-top: 15px;
+      margin-bottom: 15px;
     }
 
     .frame-exel {
@@ -155,8 +170,8 @@
 
     .foto-rgb {
       position: relative;
-      width: 50px;
-      height: 50px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background: black;
       border: 2px solid #8a8a8a;
@@ -388,4 +403,20 @@
         transform: rotate(360deg);
       }
     }
-        
+    
+    @media (max-width: 768px) {
+      .header-container {
+        gap: 5px;
+      }
+    
+      .header-container h1 {
+        font-size: 25px;
+        margin-left: 10px;
+      }
+      
+      .foto-rgb {
+        position: relative;
+        width: 60px;
+        height: 60px;
+      }
+    }
