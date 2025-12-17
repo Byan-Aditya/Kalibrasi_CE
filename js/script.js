@@ -87,6 +87,48 @@ updateDateTime();
   document.addEventListener("dragstart", e => e.preventDefault());
   document.addEventListener("drop", e => e.preventDefault());
 
+// === VIEW PAGER===
+document.addEventListener("DOMContentLoaded", () => {
+  const pager = document.getElementById('pager');
+  const buttons = document.querySelectorAll('.tab-bar button');
+
+  function goToPage(index) {
+    pager.scrollTo({
+      left: index * pager.offsetWidth,
+      behavior: 'smooth'
+    });
+  }
+
+  buttons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      goToPage(index);
+    });
+  });
+
+  pager.addEventListener('scroll', () => {
+    const index = Math.round(pager.scrollLeft / pager.offsetWidth);
+    buttons.forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+    });
+  });
+});
+
+// ===ANIMASI TULISAN TOMBOL VIEW PAGER===
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".tab-bar button");
+
+  buttons.forEach((btn) => {
+    const text = btn.textContent;
+    btn.textContent = ""; // kosongin dulu
+    [...text].forEach((ch, i) => {
+      const span = document.createElement("span");
+      span.textContent = ch;
+      span.style.setProperty("--i", i); // index buat delay
+      btn.appendChild(span);
+    });
+  });
+});
+
 // === scroll buttom ===
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('scrollBtn');
@@ -189,4 +231,3 @@ self.addEventListener("fetch", event => {
     })
   );
 });
-  
