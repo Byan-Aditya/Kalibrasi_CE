@@ -71,7 +71,7 @@
       scroll-behavior: smooth;
     }
 
-    .page {
+    .page-1 {
       flex: 0 0 100%;
       height: 100vh;
       scroll-snap-align: start;
@@ -79,9 +79,27 @@
       padding-bottom: 90px;
       overflow-y: auto;
     }
+    
+    .page-2 {
+      flex: 0 0 100%;
+      height: 100vh;
+      scroll-snap-align: start;
+      padding-top: 160px;
+      padding-bottom: 90px;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+    }
 
     @media (max-width: 768px) {
-      .page {
+      .page-1 {
+        flex: 0 0 100%;
+        padding-top: 130px;
+        padding-bottom: 85px;
+        overflow-y: auto;
+      }
+      
+      .page-2 {
         flex: 0 0 100%;
         padding-top: 130px;
         padding-bottom: 85px;
